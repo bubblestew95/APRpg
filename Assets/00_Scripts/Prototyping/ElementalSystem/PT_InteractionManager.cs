@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections.Generic;
 using System.Linq;
 
 public class PT_InteractionManager : MonoBehaviour
@@ -18,21 +17,23 @@ public class PT_InteractionManager : MonoBehaviour
         }
     }
 
-    public void HandleInteraction(PT_ElementSO element1, PT_ElementSO element2, Vector3 position)
+    // self: 상호작용을 일으킨 주체
+    // other: 상호작용의 대상
+    public void HandleInteraction(PT_ElementSO element1, PT_ElementSO element2, Vector3 position, GameObject self, GameObject other)
     {
         if (element1 == null || element2 == null) return;
 
-        // element1의 상호작용 목록에서 element2를 찾습니다.
         var interaction = element1.interactions.FirstOrDefault(i => i.otherElement == element2);
 
-        if (interaction != null)
+        if (interaction != null && interaction.actions != null)
         {
-            // 상호작용 결과 처리
-            Debug.Log($"{element1.elementName}이(가) {element2.elementName}와(과) 상호작용하여 {interaction.damage}의 데미지를 입혔습니다!");
-
-            if (interaction.interactionEffectPrefab != null)
+            Debug.Log($"{element1.elementName} interacts with {element2.elementName}.");
+            foreach (var action in interaction.actions)
             {
-                Instantiate(interaction.interactionEffectPrefab, position, Quaternion.identity);
+                if (action != null)
+                {
+                    action.Execute(position, self, other);
+                }
             }
         }
     }
