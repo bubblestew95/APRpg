@@ -37,11 +37,13 @@ public class PT_PlayerController : MonoBehaviour
         Debug.Log("Skill key pressed");
 
         List<Collider> detectedObjects = DetectObjectsInFan();
-        
+
         foreach (Collider col in detectedObjects)
         {
             Debug.Log($"Detected object: {col.gameObject.name}");
             // Implement skill logic here, e.g., apply damage or effects to detected objects
+
+            col.GetComponent<PT_ElementalProperty>();
         }
     }
 
