@@ -10,10 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0ae2930f705b034a94ae753075b70ef, type: 3}
-  m_Name: PT_FireElement
+  m_Name: PT_NormalElement
   m_EditorClassIdentifier: 
-  elementName: Fire
-  interactions:
-  - otherElement: {fileID: 11400000, guid: 0c5ad87ffacef4048ba346900d4c70d7, type: 2}
-    actions:
-    - {fileID: 11400000, guid: ad64fa27ad3f12e4dad36a6d4f9924fc, type: 2}
+  elementName: Normal
+  interactions: []
