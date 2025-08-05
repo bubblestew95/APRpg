@@ -15,11 +15,15 @@ public class PT_PlayerController : MonoBehaviour
     private float fanRadius = 5f;
     [SerializeField]
     private LayerMask detectionLayer;
+    [SerializeField]
+    private Transform bodyTr = null;
 
     private CharacterController characterController = null;
+    private Animator animator = null;
     private Vector3 moveDirection = Vector3.zero;
 
-#region Input Actions
+    #region Input Actions
+
     private void OnMove(InputValue _value)
     {
         if (_value == null)
@@ -47,7 +51,7 @@ public class PT_PlayerController : MonoBehaviour
         }
     }
 
-#endregion
+    #endregion
 
     #region Unity Callbacks
 
@@ -59,6 +63,8 @@ public class PT_PlayerController : MonoBehaviour
         {
             Debug.LogError("CharacterController component is missing on the GameObject.");
         }
+        
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -69,6 +75,13 @@ public class PT_PlayerController : MonoBehaviour
         }
 
         characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
+
+        if (bodyTr != null && moveDirection != Vector3.zero)
+        {
+            bodyTr.rotation = Quaternion.LookRotation(moveDirection);
+        }
+
+        animator.SetFloat("Speed", characterController.velocity.magnitude);
     }
 
     public List<Collider> DetectObjectsInFan()
@@ -114,5 +127,5 @@ public class PT_PlayerController : MonoBehaviour
         Gizmos.DrawRay(transform.position, rightRayDirection * fanRadius);
     }
 
-    #endregion
+#endregion
 }
