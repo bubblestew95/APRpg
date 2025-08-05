@@ -36,7 +36,7 @@ public class PT_PlayerController : MonoBehaviour
         moveDirection.z = _value.Get<Vector2>().y;
     }
 
-    private void OnSkill(InputValue _value)
+    private void OnSkill_01(InputValue _value)
     {
         Debug.Log("Skill key pressed");
 
@@ -49,6 +49,29 @@ public class PT_PlayerController : MonoBehaviour
 
             col.GetComponent<PT_ElementalProperty>();
         }
+    }
+    
+    private void OnAttack(InputValue _value)
+    {
+        if (animator != null)
+        {
+            animator.SetTrigger("Attack");
+        }
+        else
+        {
+            Debug.LogWarning("Animator component is not assigned.");
+        }
+    }
+
+    private void OnAim(InputValue _value)
+    {
+        if (_value == null)
+        {
+            Debug.LogWarning("Aim input value is null.");
+            return;
+        }
+
+        
     }
 
     #endregion
@@ -63,7 +86,7 @@ public class PT_PlayerController : MonoBehaviour
         {
             Debug.LogError("CharacterController component is missing on the GameObject.");
         }
-        
+
         animator = GetComponentInChildren<Animator>();
     }
 

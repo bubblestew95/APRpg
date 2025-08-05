@@ -15,9 +15,36 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Skill",
+                    "name": "Skill_01",
                     "type": "Button",
                     "id": "564eb8ca-fda7-4b45-894d-448debe2f499",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "c34b0f4d-f2c7-4e00-86ff-9314eead59c9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "2edd1565-1fad-4e37-a446-5a99a30838cb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Aim",
+                    "type": "Button",
+                    "id": "f616c437-b553-4bb0-8b54-51ce880d8fd3",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -83,11 +110,44 @@
                 {
                     "name": "",
                     "id": "73ccb9a2-1b2f-4861-9eb2-ce9b7d525f18",
-                    "path": "<Keyboard>/k",
+                    "path": "<Keyboard>/1",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Skill",
+                    "action": "Skill_01",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "908154b4-1ec5-4baa-b424-c00d960b296e",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "12bd36a1-f4ee-4e36-b355-e88c0e91e912",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "797a08cf-6ab0-46ae-8aeb-6850dd8aa13a",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Aim",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
