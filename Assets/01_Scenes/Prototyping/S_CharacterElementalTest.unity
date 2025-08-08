@@ -713,6 +713,58 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 191519077599097430, guid: ce07c8fc555989e4caae88eddfc9ea3a, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 191519077599097430, guid: ce07c8fc555989e4caae88eddfc9ea3a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionId
+      value: 91969db1-dd35-4f96-80b5-c3604e4a1247
+      objectReference: {fileID: 0}
+    - target: {fileID: 191519077599097430, guid: ce07c8fc555989e4caae88eddfc9ea3a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: 564eb8ca-fda7-4b45-894d-448debe2f499
+      objectReference: {fileID: 0}
+    - target: {fileID: 191519077599097430, guid: ce07c8fc555989e4caae88eddfc9ea3a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: c34b0f4d-f2c7-4e00-86ff-9314eead59c9
+      objectReference: {fileID: 0}
+    - target: {fileID: 191519077599097430, guid: ce07c8fc555989e4caae88eddfc9ea3a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionId
+      value: 2edd1565-1fad-4e37-a446-5a99a30838cb
+      objectReference: {fileID: 0}
+    - target: {fileID: 191519077599097430, guid: ce07c8fc555989e4caae88eddfc9ea3a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
+      value: f616c437-b553-4bb0-8b54-51ce880d8fd3
+      objectReference: {fileID: 0}
+    - target: {fileID: 191519077599097430, guid: ce07c8fc555989e4caae88eddfc9ea3a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionId
+      value: 66a66cad-b7cb-4b9e-b1fb-69df33de8e45
+      objectReference: {fileID: 0}
+    - target: {fileID: 191519077599097430, guid: ce07c8fc555989e4caae88eddfc9ea3a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionName
+      value: 'Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 191519077599097430, guid: ce07c8fc555989e4caae88eddfc9ea3a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: 'Player/Skill_01[/Keyboard/1]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 191519077599097430, guid: ce07c8fc555989e4caae88eddfc9ea3a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: 'Player/Interact[/Keyboard/e]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 191519077599097430, guid: ce07c8fc555989e4caae88eddfc9ea3a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionName
+      value: 'Player/Attack[/Mouse/leftButton]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 191519077599097430, guid: ce07c8fc555989e4caae88eddfc9ea3a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
+      value: 'Player/Aim[/Mouse/rightButton]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 191519077599097430, guid: ce07c8fc555989e4caae88eddfc9ea3a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionName
+      value: 'Player/Look[/Mouse/position]'
+      objectReference: {fileID: 0}
     - target: {fileID: 1867915322331509583, guid: ce07c8fc555989e4caae88eddfc9ea3a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -756,6 +808,38 @@ PrefabInstance:
     - target: {fileID: 2760098731156059369, guid: ce07c8fc555989e4caae88eddfc9ea3a, type: 3}
       propertyPath: m_Name
       value: P_PlayerCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424507999643358497, guid: ce07c8fc555989e4caae88eddfc9ea3a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424507999643358497, guid: ce07c8fc555989e4caae88eddfc9ea3a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424507999643358497, guid: ce07c8fc555989e4caae88eddfc9ea3a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424507999643358497, guid: ce07c8fc555989e4caae88eddfc9ea3a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424507999643358497, guid: ce07c8fc555989e4caae88eddfc9ea3a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424507999643358497, guid: ce07c8fc555989e4caae88eddfc9ea3a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424507999643358497, guid: ce07c8fc555989e4caae88eddfc9ea3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424507999643358497, guid: ce07c8fc555989e4caae88eddfc9ea3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7912735948483342162, guid: ce07c8fc555989e4caae88eddfc9ea3a, type: 3}
       propertyPath: orthographic
