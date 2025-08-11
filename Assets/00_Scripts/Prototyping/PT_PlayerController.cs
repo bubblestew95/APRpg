@@ -22,6 +22,10 @@ public class PT_PlayerController : MonoBehaviour
     [SerializeField]
     private Transform bodyTr = null; // 캐릭터의 시각적 모델(회전 처리를 위함)
 
+    [Header("Skill Settings")]
+    [SerializeField]
+    private EElementalType currentSkillElement = EElementalType.None;
+
     // --- 컴포넌트 및 내부 변수 ---
     private CharacterController characterController = null; // 물리 기반 이동을 위한 캐릭터 컨트롤러
     private Animator animator = null; // 애니메이션 제어를 위한 애니메이터
@@ -59,15 +63,20 @@ public class PT_PlayerController : MonoBehaviour
     /// </summary>
     public void OnSkill_01(InputAction.CallbackContext context)
     {
-        Debug.Log("Skill key pressed");
-
-        List<Collider> detectedObjects = DetectObjectsInFan();
-
-        foreach (Collider col in detectedObjects)
+        if (context.performed)
         {
-            Debug.Log($"Detected object: {col.gameObject.name}");
-            // TODO: 스킬 로직 구현 (예: 감지된 오브젝트에 데미지 또는 효과 적용)
-            col.GetComponent<PT_ElementalProperty>();
+            Debug.Log($"스킬 발동! 현재 속성: {currentSkillElement}");
+
+            List<Collider> detectedObjects = DetectObjectsInFan();
+
+            foreach (Collider col in detectedObjects)
+            {
+                PT_ElementalProperty targetElement = col.GetComponent<PT_ElementalProperty>();
+                if (targetElement != null)
+                {
+                    targetElement.TakeDamageWithElement(currentSkillElement);
+                }
+            }
         }
     }
     
@@ -152,6 +161,16 @@ public class PT_PlayerController : MonoBehaviour
     }
 
     #endregion
+
+    /// <summary>
+    /// 플레이어의 스킬 속성을 설정합니다.
+    /// </summary>
+    /// <param name="newElement">설정할 새로운 속성</param>
+    public void SetSkillElement(EElementalType newElement)
+    {
+        currentSkillElement = newElement;
+        Debug.Log($"플레이어 스킬 속성이 {newElement}(으)로 변경되었습니다.");
+    }
 
     /// <summary>
     /// 평상시(조준 중이 아닐 때) 캐릭터가 이동 방향을 바라보도록 합니다.

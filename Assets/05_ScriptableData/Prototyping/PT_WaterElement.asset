@@ -16,4 +16,4 @@ MonoBehaviour:
   interactions:
   - otherElement: {fileID: 11400000, guid: 2f93dba127d16854b8bbd6cbfb6687f7, type: 2}
     actions:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 0641188e0c9fe334190eab9878c8c627, type: 2}

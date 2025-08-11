@@ -3,7 +3,7 @@ using UnityEngine;
 /// <summary>
 /// 오브젝트의 속성을 정의하는 열거형.
 /// </summary>
-public enum ElementalType
+public enum EElementalType
 {
     None,
     Fire,
@@ -17,12 +17,12 @@ public enum ElementalType
 public class PT_ElementalProperty : MonoBehaviour
 {
     [Tooltip("현재 오브젝트의 속성"), SerializeField]
-    private ElementalType currentElement = ElementalType.None;
+    private EElementalType currentElement = EElementalType.None;
 
     [Tooltip("이 오브젝트에 적용될 수 있는 속성들"), SerializeField]
-    private ElementalType[] validElements;
+    private EElementalType[] validElements;
 
-    public void SetElement(ElementalType newElement)
+    public void SetElement(EElementalType newElement)
     {
         if (System.Array.Exists(validElements, element => element == newElement))
         {
@@ -33,5 +33,13 @@ public class PT_ElementalProperty : MonoBehaviour
         {
             Debug.Log($"Element {newElement} is not valid for this object.");
         }
+    }
+
+    public void TakeDamageWithElement(EElementalType attackingElement)
+    {
+        // TODO: 속성 상성 로직 구현
+        Debug.Log($"{gameObject.name} (속성: {currentElement})이(가) {attackingElement} 속성의 공격을 받았습니다.");
+
+
     }
 }
