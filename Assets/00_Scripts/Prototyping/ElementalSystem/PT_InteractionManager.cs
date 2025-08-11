@@ -19,7 +19,8 @@ public class PT_InteractionManager : MonoBehaviour
 
     // self: 상호작용을 일으킨 주체
     // other: 상호작용의 대상
-    public void HandleInteraction(PT_ElementSO element1, PT_ElementSO element2, Vector3 position, GameObject self, GameObject other)
+    public void HandleInteraction(PT_ElementSO element1, PT_ElementSO element2, Vector3 position,
+    GameObject self, GameObject other)
     {
         if (element1 == null || element2 == null) return;
 
