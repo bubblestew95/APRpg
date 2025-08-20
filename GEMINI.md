@@ -43,3 +43,29 @@
 *   **키워드**: `Util`, `Helper`, `Extension`, `Common`
 *   **예시**: `TransformExtensions.cs`, `JsonHelper.cs`
 
+# C# 스크립트 스타일 가이드
+
+이 프로젝트의 C# 스크립트는 다음 스타일 가이드를 따릅니다.
+
+## #region 사용 규칙
+
+스크립트의 가독성을 높이기 위해, 클래스 내부의 코드를 기능별로 그룹화하는 `#region` 전처리문을 적극적으로 사용합니다.
+아래 순서를 기준으로 작성하는 것을 원칙으로 합니다.
+
+### 1. Public, Serialized Fields
+*   **역할**: Inspector 창에 노출되는 `public` 변수나 `[SerializeField]` 어트리뷰트가 붙은 변수들을 정의합니다.
+
+### 2. Private Fields
+*   **역할**: Inspector 창에 노출되지 않는 순수 `private` 멤버 변수들을 정의합니다.
+
+### 3. Properties
+*   **역할**: `public` 또는 `private` 프로퍼티(`{ get; set; }`)들을 이곳에 정의합니다.
+
+### 4. Public Methods
+*   **역할**: 클래스 외부에서 호출할 수 있는 모든 `public` 메소드를 정의합니다. 이 클래스의 핵심 기능(API)에 해당합니다.
+
+### 5. Private Methods
+*   **역할**: 클래스 내부에서만 사용되는 모든 `private` 헬퍼(Helper) 메소드를 정의합니다.
+
+### 6. Unity Callbacks
+*   **역할**: `Awake()`, `Start()`, `Update()`, `OnEnable()` 등 Unity 엔진이 호출하는 생명주기 메소드를 모아둡니다.
