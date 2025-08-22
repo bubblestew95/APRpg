@@ -7,12 +7,6 @@ public class PlayerManager : MonoBehaviour
 
     #region Private Fields
 
-    #region Modules
-
-    private PlayerInputModule playerInputModule = null;
-
-    #endregion
-
     #region  Components
 
     #endregion

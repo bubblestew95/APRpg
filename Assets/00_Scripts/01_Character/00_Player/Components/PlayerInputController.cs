@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInputModule
+public class PlayerInputController : MonoBehaviour
 {
     #region Public Fields
     #endregion
@@ -39,11 +39,21 @@ public class PlayerInputModule
         }
     }
 
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        var moveEvent = new GameEvents.PlayerMoveEvent
+        {
+            moveDirection = context.ReadValue<Vector2>()
+        };
+
+        GameEventManager.Instance.Publish(moveEvent);
+    }
+
     #endregion
 
     #region Private Methods
 
-    
+
 
     #endregion
 }

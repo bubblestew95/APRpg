@@ -19,12 +19,14 @@ public class GameEventManager : MonoBehaviour
             if (_instance == null)
             {
                 _instance = FindAnyObjectByType<GameEventManager>();
+
                 if (_instance == null)
                 {
                     GameObject obj = new GameObject("GameEventManager");
                     _instance = obj.AddComponent<GameEventManager>();
                 }
             }
+
             return _instance;
         }
     }
@@ -34,7 +36,7 @@ public class GameEventManager : MonoBehaviour
         if (_instance == null)
         {
             _instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(this.gameObject);
         }
         else
         {

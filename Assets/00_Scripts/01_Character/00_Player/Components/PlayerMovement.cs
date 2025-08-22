@@ -1,17 +1,20 @@
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
     #region Public, Serialized Fields
 
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 5f;
-    
+
     #endregion
 
     #region Private Fields
 
     private CharacterMover characterMover = null;
+
+    private Vector3 moveDirection = Vector3.zero;
 
     #endregion
 
@@ -19,17 +22,6 @@ public class PlayerMovement : MonoBehaviour
     #endregion
 
     #region Public Methods
-
-    public void Move(Vector3 direction)
-    {
-        if (characterMover == null)
-        {
-            Debug.LogError("CharacterMover is not initialized.");
-            return;
-        }
-
-        characterMover.Move(direction, moveSpeed);
-    }
 
     #endregion
 
@@ -47,6 +39,23 @@ public class PlayerMovement : MonoBehaviour
         characterMover = new CharacterMover(characterController);
     }
 
+    private void HandleMove(GameEvents.PlayerMoveEvent _moveEvent)
+    {
+        moveDirection.x = _moveEvent.moveDirection.x;
+        moveDirection.z = _moveEvent.moveDirection.y;
+    }
+
+    private void Move(Vector3 direction)
+    {
+        if (characterMover == null)
+        {
+            Debug.LogError("CharacterMover is not initialized.");
+            return;
+        }
+
+        characterMover.Move(direction, moveSpeed);
+    }
+
     #endregion
 
     #region Unity Callbacks
@@ -55,7 +64,25 @@ public class PlayerMovement : MonoBehaviour
     {
         Init();
     }
-    
+
+    private void OnEnable()
+    {
+        GameEventManager.Instance.Subscribe<GameEvents.PlayerMoveEvent>(HandleMove);
+    }
+
+    private void OnDisable()
+    {
+        GameEventManager.Instance.Unsubscribe<GameEvents.PlayerMoveEvent>(HandleMove);
+    }
+
+    private void Update()
+    {
+        if (moveDirection != Vector3.zero)
+        {
+            Move(moveDirection);
+        }
+    }
+
     #endregion
 
 }

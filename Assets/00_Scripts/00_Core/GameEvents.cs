@@ -11,7 +11,7 @@ public static class GameEvents
     /// </summary>
     public struct PlayerMoveEvent
     {
-        public Vector2 moveDirection;
+        public Vector3 moveDirection;
     }
 
     /// <summary>
