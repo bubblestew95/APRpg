@@ -9,6 +9,8 @@ public class PlayerManager : MonoBehaviour
 
     #region  Components
 
+    private PlayerInputController playerInputCtrl = null;
+
     #endregion
 
     #endregion
@@ -20,13 +22,26 @@ public class PlayerManager : MonoBehaviour
     #endregion
 
     #region Private Methods
+
+    private void Initialize()
+    {
+        playerInputCtrl = GetComponent<PlayerInputController>();
+        if (playerInputCtrl == null)
+        {
+            Debug.LogError("PlayerInputController component is missing on PlayerManager.");
+            return;
+        }
+
+        playerInputCtrl.Initialize(this);
+    }
+
     #endregion
 
     #region Unity Callbacks
 
     private void Awake()
     {
-
+        Initialize();
     }
 
     #endregion

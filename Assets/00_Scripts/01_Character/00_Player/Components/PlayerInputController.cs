@@ -53,7 +53,5 @@ public class PlayerInputController : MonoBehaviour
 
     #region Private Methods
 
-
-
     #endregion
 }

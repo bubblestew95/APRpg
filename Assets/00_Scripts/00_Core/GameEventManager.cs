@@ -36,11 +36,11 @@ public class GameEventManager : MonoBehaviour
         if (_instance == null)
         {
             _instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(gameObject);
         }
-        else
+        else if (_instance != this)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 
