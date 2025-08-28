@@ -259,11 +259,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5276321721210331022}
-  - component: {fileID: 4439928067357624618}
-  - component: {fileID: 3462143976956014394}
   - component: {fileID: 4624875637137322197}
   - component: {fileID: 4124572285097657793}
   - component: {fileID: 6480092812045095652}
+  - component: {fileID: 4439928067357624618}
+  - component: {fileID: 3462143976956014394}
   m_Layer: 0
   m_Name: P_PlayerCharacter
   m_TagString: Untagged
@@ -288,31 +288,6 @@ Transform:
   - {fileID: 1440156910505919815}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4439928067357624618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1205435313348783537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fae8404039219149aa44a62f48b34d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 5
---- !u!114 &3462143976956014394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1205435313348783537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 693db4d77b0825e479ded476e7d0e978, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerManager
 --- !u!114 &4624875637137322197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,6 +391,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1310b22e4277542ac1b64c435576c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputController
+--- !u!114 &4439928067357624618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205435313348783537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fae8404039219149aa44a62f48b34d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  moveSpeed: 5
+--- !u!114 &3462143976956014394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205435313348783537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 693db4d77b0825e479ded476e7d0e978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerManager
 --- !u!1 &8038947869825481103
 GameObject:
   m_ObjectHideFlags: 0
