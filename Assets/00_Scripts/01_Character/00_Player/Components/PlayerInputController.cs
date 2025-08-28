@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// 플레이어의 입력을 처리하는 컴포넌트.
+/// </summary>
 public class PlayerInputController : MonoBehaviour
 {
     #region Public Fields
@@ -14,6 +17,7 @@ public class PlayerInputController : MonoBehaviour
     private PlayerManager playerMng = null;
 
     private PlayerInput playerInputComp = null;
+    
     #endregion
 
     #region Properties

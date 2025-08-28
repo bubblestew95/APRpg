@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// CharacterController를 사용하는 캐릭터를 이동시키는 클래스.
+/// </summary>
 public class CharacterMover
 {
     private CharacterController characterController = null;

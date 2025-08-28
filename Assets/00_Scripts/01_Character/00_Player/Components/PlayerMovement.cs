@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// 플레이어의 이동을 처리하는 컴포넌트.
+/// </summary>
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
@@ -72,6 +75,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDisable()
     {
+        if (GameEventManager.Instance == null)
+        {
+            Debug.LogWarning("GameEventManager instance is null. Skipping unsubscription.");
+            return;
+        }
+        
         GameEventManager.Instance.Unsubscribe<GameEvents.PlayerMoveEvent>(HandleMove);
     }
 

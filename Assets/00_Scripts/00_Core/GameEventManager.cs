@@ -16,32 +16,44 @@ public class GameEventManager : MonoBehaviour
     {
         get
         {
-            if (_instance == null)
+            if (isApplicationQuitting)
             {
-                _instance = FindAnyObjectByType<GameEventManager>();
+                return null;
+            }
 
                 if (_instance == null)
                 {
-                    GameObject obj = new GameObject("GameEventManager");
-                    _instance = obj.AddComponent<GameEventManager>();
+                    _instance = FindAnyObjectByType<GameEventManager>();
+
+                    if (_instance == null)
+                    {
+                        GameObject obj = new GameObject("GameEventManager");
+                        _instance = obj.AddComponent<GameEventManager>();
+                    }
                 }
-            }
 
             return _instance;
         }
     }
+
+    private static bool isApplicationQuitting = false;
 
     private void Awake()
     {
         if (_instance == null)
         {
             _instance = this;
-            DontDestroyOnLoad(gameObject);
+            // DontDestroyOnLoad(gameObject);
         }
         else if (_instance != this)
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        isApplicationQuitting = true;
     }
 
     #endregion

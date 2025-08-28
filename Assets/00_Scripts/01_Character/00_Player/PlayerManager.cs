@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// 플레이어를 총괄적으로 관리하는 매니저 클래스.
+/// </summary>
 public class PlayerManager : MonoBehaviour
 {
     #region Public, Serialized Fields
