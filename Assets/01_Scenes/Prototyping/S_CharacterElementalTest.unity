@@ -838,6 +838,10 @@ PrefabInstance:
       propertyPath: orthographic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 612511618708062780, guid: 2107d18e62510f047a81d0a86b9424b0, type: 3}
+      propertyPath: orthographic size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1205435313348783537, guid: 2107d18e62510f047a81d0a86b9424b0, type: 3}
       propertyPath: m_Name
       value: P_PlayerCharacter

@@ -6,6 +6,8 @@ using UnityEngine;
 /// </summary>
 public static class GameEvents
 {
+    #region Input Events
+
     /// <summary>
     /// 플레이어 이동 입력 이벤트.
     /// </summary>
@@ -21,4 +23,6 @@ public static class GameEvents
     {
 
     }
+
+    #endregion
 }

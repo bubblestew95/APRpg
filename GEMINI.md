@@ -69,3 +69,30 @@
 
 ### 6. Unity Callbacks
 *   **역할**: `Awake()`, `Start()`, `Update()`, `OnEnable()` 등 Unity 엔진이 호출하는 생명주기 메소드를 모아둡니다.
+
+# C# 스크립트 기본 템플릿
+
+아래 템플릿을 복사하여 새로운 C# 스크립트를 빠르게 생성할 수 있습니다.
+
+```csharp
+
+    #region Public, Serialized Fields
+    #endregion
+
+    #region Private Fields
+    #endregion
+
+    #region Properties
+    #endregion
+
+    #region Public Methods
+    #endregion
+
+    #region Private Methods
+    #endregion
+
+    #region Unity Callbacks
+
+    #endregion
+    
+```
